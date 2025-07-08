@@ -5,11 +5,16 @@ import './index.css'
 import MainLayout from './MainLayouut/MainLayout.jsx'
 import { RouterProvider } from 'react-router'
 import Route from './Route/Route.jsx'
+import { CartProvider } from './context/CartContext.jsx'
+import { Toaster } from 'react-hot-toast'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={Route}>
+    <CartProvider>
+      <RouterProvider router={Route}>
       <MainLayout />
     </RouterProvider>
+    </CartProvider>
+    <Toaster/>
   </StrictMode>,
 )
